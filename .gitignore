@@ -1,0 +1,27 @@
+node_modules/
+/data/
+/backups/
+/exports/
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.log
+*.pem
+*.key
+*.p12
+*.pfx
+*.rar
+*.zip
+/.codex/
+/.agents/
+/.aws/
+# 旧页面包含私人联系方式，仅保留本地。新站所需媒体仍可上传。
+/html/*
+!/html/images/
+!/html/videos/
+
+/dist/

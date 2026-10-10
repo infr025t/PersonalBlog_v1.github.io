@@ -1,0 +1,14 @@
+*
+!package.json
+!server/
+!server/*.mjs
+!public/
+!public/*.html
+!public/*.js
+!public/*.css
+!html/
+!html/images/
+!html/images/*
+!html/videos/
+!html/videos/*
+!Dockerfile

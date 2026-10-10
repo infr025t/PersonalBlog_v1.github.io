@@ -1,0 +1,17 @@
+{
+  "name": "000lll-blog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/index.mjs",
+    "dev": "node --env-file-if-exists=.env --watch server/index.mjs",
+    "account:init": "node --env-file-if-exists=.env scripts/account.mjs",
+    "account:reset": "node --env-file-if-exists=.env scripts/account.mjs --reset-password",
+    "test": "node --test tests/*.test.mjs",
+    "check:upload": "node scripts/check-upload.mjs",
+    "build:static": "node scripts/build-static.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
