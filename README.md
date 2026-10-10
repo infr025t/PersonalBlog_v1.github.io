@@ -16,12 +16,24 @@ node server/index.mjs
 
 ## 发布到 GitHub Pages（纯静态，无需后端服务）
 
+本项目的站点地址：[打开博客](https://infr025t.github.io/PersonalBlog_v1.github.io/)。源码在 [GitHub 仓库](https://github.com/infr025t/PersonalBlog_v1.github.io)，部署状态可在仓库的 **Actions** 查看。
+
 1. 在 GitHub 创建仓库，把项目源码上传，根目录应直接有 `package.json`、`public/`、`server/`、`scripts/` 和 `.github/`。
 2. 进入仓库 **Settings → Pages → Build and deployment → Source**，选择 **GitHub Actions**。
 3. 将代码推送到 `main` 分支，或进入 **Actions → Deploy static blog to GitHub Pages → Run workflow** 手动运行。
 4. 等待部署成功，从 **Settings → Pages** 打开给出的链接，通常为 `https://用户名.github.io/仓库名/`。
 
-已准备 `.github/workflows/pages.yml`，它会导出公开文章、样式、脚本与媒体，不上传数据库或账号。部署使用平台提供的临时授权，不需要在源码中填写密码、访问令牌或管理员信息。流程须在你的 GitHub 仓库中运行；本地已经验证导出，尚未实际发布到 GitHub。
+已准备 `.github/workflows/pages.yml`，它会导出公开文章、样式、脚本与媒体，不上传数据库或账号。部署使用平台提供的临时授权，不需要在源码中填写密码、访问令牌或管理员信息。推送到 `main` 后会自动重新部署，实际发布结果以 **Actions** 中的运行状态为准。
+
+以后更新文章，编辑 `server/seed.mjs` 后在项目目录运行：
+
+```powershell
+git add server/seed.mjs
+git commit -m "Update blog posts"
+git push
+```
+
+更新外观时，修改 `public/` 中的文件，提交时将这些文件一并加入。无需手动上传 `dist/`。
 
 GitHub Pages 的可用性与仓库可见性受账号套餐限制：GitHub Free 可用于公开仓库；私有仓库需要相应付费套餐。公共站点中的文章、媒体、邮件和 Bilibili 链接都会公开，请确认愿意分享。[GitHub 官方说明](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
 
